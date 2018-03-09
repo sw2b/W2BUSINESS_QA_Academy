@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>This page get users my_answers.json files for check answers</title>
+<script type="text/javascript" src="2.data_template.json"></script>
+</head>
+<body>
+<br><br><br>
+<center><h1><div id="result">Invalid JSON format</div></h1></center>
+
+<script>
+var filedata = JSON.parse(data);
+var checkResult = (filedata.answer_1=="C" && filedata.answer_2=="C" && filedata.answer_3=="C" && filedata.answer_4=="A" && filedata.answer_5=="B" && filedata.answer_6=="C" && filedata.answer_7=="A" && filedata.answer_8=="D" && filedata.answer_9=="C" && filedata.answer_10=="C");
+// correct set $array = array("C", "C", "C", "A", "B", "C", "A", "D", "C", "C");
+if(checkResult){checkResult = "All your answers are correct!"}else{checkResult="Some your answers are incorrect!"}
+//if(true){checkResult = '<div id="result">All your answers are correct</div>'} else {checkResult = '<div id="result">Some your answers are wrong</div>'};
+document.getElementById('result').innerHTML = checkResult;
+
+</script>
+
+</body>
+</html>
