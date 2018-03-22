@@ -1,0 +1,116 @@
+{
+	"info": {
+		"_postman_id": "ff9c243f-6940-4ce1-95d3-55400a45c9c8",
+		"name": "4.API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "4.API-HomeWork 2,3",
+			"description": "",
+			"item": [
+				{
+					"name": "Test question",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "qa.w2business.pl/L4/questions.php?id=1",
+							"host": [
+								"qa",
+								"w2business",
+								"pl"
+							],
+							"path": [
+								"L4",
+								"questions.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Test answers set",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "qa.w2business.pl/L4/answers.php?id=1",
+							"host": [
+								"qa",
+								"w2business",
+								"pl"
+							],
+							"path": [
+								"L4",
+								"answers.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "4.API-HomeWork 4 - DDT",
+			"description": "",
+			"item": [
+				{
+					"name": "answersChecker",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c4faf2f5-ac69-4ebb-bb8d-70c8e8cf9aeb",
+								"type": "text/javascript",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "qa.w2business.pl/L4/answersChecker.php?id={{answer}}{{value}}",
+							"host": [
+								"qa",
+								"w2business",
+								"pl"
+							],
+							"path": [
+								"L4",
+								"answersChecker.php"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{answer}}{{value}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
